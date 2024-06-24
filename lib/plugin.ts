@@ -13,7 +13,9 @@ export function replitDatabasePlugin(
 		url: string;
 	};
 }): any {
-	return new Elysia().state("client", new config.Client(config.options.url))
+	return new Elysia({
+		prefix: config.options.prefix,
+	}).state("client", new config.Client(config.options.url))
 		.use(ElysiaReplitDatabaseModel)
 		.get(
 			"/list",
