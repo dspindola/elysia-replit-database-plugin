@@ -1,0 +1,10 @@
+logLevel = "debug"
+
+[loader]
+".ts" = "ts"
+
+[test]
+root = "./__tests__"
+
+[install.scopes]
+"@jsr" = "https://npm.jsr.io"

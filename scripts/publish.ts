@@ -1,0 +1,1 @@
+await Bun.$`bunx jsr publish`

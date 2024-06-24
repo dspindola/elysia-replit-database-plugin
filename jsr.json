@@ -1,0 +1,32 @@
+{
+    "name": "@gyoza/elysia-replit-database-plugin",
+    "version": "0.1.0",
+    "description": "Elysia plugin for Replit Database",
+    "exports": {
+        ".": "./lib/index.ts",
+        "./plugin": "./lib/plugin.ts"
+    },
+    "compilerOptions": {
+        "lib": [
+            "esnext"
+        ]
+    },
+    "publish": {
+        "include": [
+            "jsr.json",
+            "LICENSE",
+            "README.md",
+            "docs/index.md",
+            "lib/**/*.ts"
+        ],
+        "exclude": [
+            "./__tests__/**/*.ts",
+            "./moon.yml",
+            "./.config/**/*.ts",
+            "./scripts/**/*.ts",
+            "./.tmp/**/*.ts",
+            "./.env.local",
+            "./bunfig.toml"
+        ]
+    }
+}

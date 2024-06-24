@@ -1,0 +1,45 @@
+type: library
+language: typescript
+platform: bun
+
+id: elysia-replit-database-plugin
+
+tags:
+  - replit
+  - elysia-plugin
+  - package
+
+project:
+  description: Elysia plugin for Replit Database
+  name: "@gyoza/elysia-replit-database-plugin"
+  maintainers:
+    - dspindola
+    - no-turno
+  channel: "#engineering"
+  owner: gyoza
+
+tasks:
+  build:
+    command: bun run ./scripts/build.ts
+    outputs:
+      - "./.tmp/index.js"
+    env:
+      NODE_ENV: "production"
+      BUN_BUILD_TARGET: "bun"
+      BUN_BUILD_FORMAT: "esm"
+      BUN_BUILD_OUTDIR: "./.tmp/lib"
+      BUN_BUILD_SOURCEMAP: "external"
+  test:
+    command: "bun test"
+    env:
+      NODE_ENV: "development"
+  check:
+    command: bun run ./scripts/check.ts
+    env:
+      EDITOR: "cursor"
+      VISUAL: "cursor"
+  publish:
+    deps:
+      - check
+      - build
+    command: bun run ./scripts/publish.ts
